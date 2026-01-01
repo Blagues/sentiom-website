@@ -1,127 +1,224 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentiom - Vroege signalering voor gemeenten</title>
+    <title>Voltair - A Faster Inspection Service For Power Utilities</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Hero -->
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Sentiom</a>
+            <div class="nav-menu">
+                <a href="#service">Our Service</a>
+                <a href="#rd">R&D</a>
+                <a href="#mission">Our Mission</a>
+                <a href="#news">News</a>
+                <a href="#careers">Careers</a>
+            </div>
+            <a href="#contact" class="nav-cta">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Weet wat er speelt binnen uw gemeente</h1>
-            <p class="hero-subtitle">Sentiom helpt gemeenten om actuele thema's en ontwikkelingen te identificeren, zodat hier rekening mee gehouden kan worden bij beleidsmaking.</p>
-            <a href="mailto:contact@datadoor.nl" class="cta-button">Neem contact op</a>
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Onderzoek sentiment <span class="highlight">zonder</span> persoonsgegevens te gebruiken</h1>
+                <div class="hero-buttons">
+                    <a href="#rd" class="btn-primary">Meld je aan voor de Alpha</a>
+                    <a href="#contact" class="btn-secondary">Contact</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/egghall.jpg" alt="Drone Platform">
+            </div>
         </div>
     </section>
 
-    <!-- Deelnemende Gemeentes -->
-    <section class="municipalities-section">
-        <div class="container">
-            <p class="municipalities-label">Deelnemende gemeentes</p>
-            <div class="municipalities-grid">
-                <div class="municipality-card">
-                    <img src="logos/rijswijk.jpeg" alt="Gemeente Rijswijk">
+    <!-- AI + Drone Inspections -->
+    <section id="service" class="section-two-col">
+        <div class="two-col-container">
+            <div class="two-col-text">
+                <h2>AI + Drone inspections accurately identify fault-prone issues</h2>
+                <p>Our AI-powered system delivers 5× better accuracy than traditional ground inspections. AI automatically flags exceptions and fault-prone issues, helping utilities prevent outages before they happen.</p>
+            </div>
+            <div class="two-col-image">
+                <img src="images/birdseye.jpg" alt="AI Exception Detection">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lineman Safety -->
+    <section class="section-two-col-reverse">
+        <div class="two-col-container">
+            <div class="two-col-image">
+                <img src="images/pedestrians.jpg" alt="Lineman Safety">
+            </div>
+            <div class="two-col-text">
+                <h2>Drones Keep Linemen Safe</h2>
+                <p>Provide your field teams with critical situational awareness through high-resolution aerial imagery. Our drones inspect dangerous assets and inaccessible terrain, keeping your linemen out of harm's way.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terrain Access -->
+    <section class="section-full-image" style="background-image: url('images/redlight.jpg');">
+        <div class="full-image-overlay">
+            <h2>Inspect assets in the most inaccessible terrain across the US</h2>
+            <p>12-mile range capability</p>
+        </div>
+    </section>
+
+    <!-- Data Integration -->
+    <section class="section-two-col">
+        <div class="two-col-container">
+            <div class="two-col-text">
+                <h2>Insights Delivered with Ease</h2>
+                <p>Export inspection data in PDF, CSV, or Shapefile formats. Seamlessly integrate with your existing GIS workflows.</p>
+                <div class="hero-buttons" style="margin-top: 24px;">
+                    <a href="#demo" class="btn-secondary">View 3D Mesh Demo</a>
+                </div>
+            </div>
+            <div class="two-col-image">
+                <img src="images/skyscrapers.jpg" alt="GIS Integration">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-cta">
+        <div class="cta-container">
+            <h2>Contact Us</h2>
+            <p>Schedule a meeting with our team to discuss how we can help your utility improve inspection efficiency and safety.</p>
+            <div class="cta-buttons">
+                <a href="mailto:info@voltairlabs.com" class="btn-primary btn-white">Book a Meeting</a>
+                <a href="mailto:info@voltairlabs.com" class="btn-secondary btn-outline">Email Us</a>
+            </div>
+            <p style="margin-top: 24px; font-size: 16px;">info@voltairlabs.com</p>
+        </div>
+    </section>
+
+    <!-- R&D Section -->
+    <section id="rd" class="section-single">
+        <div class="single-container">
+            <h2>We're building the future of drone inspections</h2>
+            <p style="font-size: 24px; font-weight: 600; margin-top: 32px;">Tomorrow's Drone Inspections</p>
+            <h3 style="font-size: 32px; margin-top: 24px;">Drones That Recharge From Powerlines</h3>
+            <p>Coming soon in 2026</p>
+        </div>
+    </section>
+
+    <!-- R&D Partnership -->
+    <section class="section-two-col">
+        <div class="two-col-container">
+            <div class="two-col-text">
+                <h2>Partnership with Big Bend Electric Cooperative</h2>
+                <p>We're working with forward-thinking utilities to develop the next generation of autonomous inspection technology.</p>
+            </div>
+            <div class="two-col-image">
+                <img src="images/birdseye.jpg" alt="Partnership">
+            </div>
+        </div>
+    </section>
+
+    <!-- R&D Capabilities -->
+    <section class="section-three-col">
+        <div class="three-col-container">
+            <div class="three-col-header">
+                <h2>Autonomous Capabilities</h2>
+            </div>
+            <div class="three-col-grid">
+                <div class="three-col-item">
+                    <h3>Reliable Digital Twin</h3>
+                    <p>1350 miles per year inspection capacity with automated, continuous monitoring</p>
+                </div>
+                <div class="three-col-item">
+                    <h3>Rapid Emergency Deployment</h3>
+                    <p>Deploy inspection capabilities immediately when and where you need them most</p>
+                </div>
+                <div class="three-col-item">
+                    <h3>Pre-positioning for MEDs</h3>
+                    <p>Strategic placement for Major Event Days, providing critical situational awareness</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2>Wat Sentiom doet</h2>
-                <p>Een overzicht voor wie alert wil zijn op wat er in de samenleving gebeurt</p>
+    <!-- Mission Section -->
+    <section id="mission" class="section-two-col-reverse">
+        <div class="two-col-container">
+            <div class="two-col-image">
+                <img src="images/pedestrians.jpg" alt="American Flag">
             </div>
+            <div class="two-col-text">
+                <h2>Help America's Linemen Keep the Lights On</h2>
+                <p>Voltair is an all-American company based in Washington State. We're dedicated to supporting rural utilities and the hardworking linemen who keep our communities powered.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- News Section -->
+    <section id="news" class="section-features">
+        <div class="features-container">
+            <div class="features-header">
+                <h2>News</h2>
+            </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Signalen monitoren</h3>
-                    <p>Volgt publieke bronnen zoals nieuws en sociale media om relevante signalen te herkennen.</p>
+                    <img src="images/birdseye.jpg" alt="News" class="feature-card-image">
+                    <div class="feature-card-content">
+                        <p style="font-size: 14px; color: #666; margin-bottom: 8px;">Sept 3, 2025</p>
+                        <h3>Voltair joins Y Combinator</h3>
+                    </div>
                 </div>
 
                 <div class="feature-card">
-                    <h3>Patronen herkennen</h3>
-                    <p>Detecteer pieken, verschuivingen en opkomende onderwerpen die anders pas later zichtbaar worden.</p>
+                    <img src="images/redlight.jpg" alt="News" class="feature-card-image">
+                    <div class="feature-card-content">
+                        <p style="font-size: 14px; color: #666; margin-bottom: 8px;">July 21, 2025</p>
+                        <h3>Fighting fire before it sparks</h3>
+                    </div>
                 </div>
 
                 <div class="feature-card">
-                    <h3>Context bieden</h3>
-                    <p>Geeft korte duidingen en samenvattingen bij wat er gebeurt, zodat u snel begrijpt waarom iets relevant is.</p>
+                    <img src="images/pedestrians.jpg" alt="News" class="feature-card-image">
+                    <div class="feature-card-content">
+                        <p style="font-size: 14px; color: #666; margin-bottom: 8px;">May 23, 2025</p>
+                        <h3>Drone startup wins top prize</h3>
+                    </div>
                 </div>
 
                 <div class="feature-card">
-                    <h3>Onderzoek genereren</h3>
-                    <p>Kies zelf een onderwerp uit en genereer automatisch een onderzoek met behulp van AI. Ideaal als u meer te weten wilt komen over het sentiment over een thema.</p>
+                    <img src="images/skyscrapers.jpg" alt="News" class="feature-card-image">
+                    <div class="feature-card-content">
+                        <p style="font-size: 14px; color: #666; margin-bottom: 8px;">April 4, 2025</p>
+                        <h3>Self-charging drones land top prize</h3>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Alpha Samenwerking -->
-    <section class="alpha-collaboration">
-        <div class="container">
-            <div class="collaboration-content">
-                <span class="alpha-badge-small">Alpha-fase</span>
-                <h2>Samen bouwen aan een nuttige tool</h2>
-                <p>Sentiom bevindt zich in de alpha-fase. We werken nauw samen met gemeenten om een tool te ontwikkelen die echt waarde toevoegt in de praktijk. Door samen te experimenteren en te leren, bouwen we aan een product dat aansluit bij de dagelijkse werkelijkheid van communicatieadviseurs, beleidsmedewerkers en bestuursondersteuning.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <h2>Veelgestelde vragen</h2>
-            </div>
-
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">Hoe verschilt Sentiom van klassieke mediabewaking?</div>
-                    <div class="faq-answer">Sentiom focust zich op het meten van sentiment direct bij de inwoner, niet via traditionele media. Dit doen wij door o.a. socialmediakanalen te monitoren.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Welke bronnen worden gemonitord?</div>
-                    <div class="faq-answer">Het systeem analyseert publieke bronnen zoals nieuws, sociale media en maatschappelijke context. De focus ligt op signalen die relevant zijn voor gemeentelijk beleid.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Hoe kan mijn gemeente deelnemen aan de alpha-fase?</div>
-                    <div class="faq-answer">Toegang is momenteel op uitnodiging. U kunt contact op nemen voor meer informatie over deelname en de mogelijkheden binnen uw gemeente.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Wat voor output levert Sentiom?</div>
-                    <div class="faq-answer">De tool kan daily/weekly updates en onderzoeksrapporten voor elk onderwerp genereren.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Worden er persoonsgegevens of andere sensitieve data verwerkt?</div>
-                    <div class="faq-answer">Nee, wij slaan geen persoonsgegevens op van comments en filteren gevonden namen eruit. Het doel is slechts de berichten met sentiment te verzamelen. Bij een social media comment over een burger die boos is over werkzaamheden slaan wij dus wel de tekst op, maar geen accountnaam enz.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section-alt">
-        <div class="container">
-            <div class="cta-section">
-                <h3>Interesse in deelname?</h3>
-                <p>Neem contact op voor meer informatie over de alpha-fase en de mogelijkheden voor uw gemeente.</p>
-                <a href="mailto:contact@datadoor.nl" class="cta-button">Stuur een bericht</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Sentiom is een product van <a href="https://datadoor.dev" target="_blank" rel="noopener noreferrer">DataDoor</a></p>
-        <p><a href="mailto:contact@datadoor.nl">contact@datadoor.nl</a></p>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>VOLTAIR</h4>
+                <p>A Safer, Smarter, and Faster Inspection Service For Power Utilities</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <p><a href="#demo">3D Demo</a></p>
+                <p><a href="#careers">Careers</a></p>
+                <p><a href="mailto:info@voltairlabs.com">info@voltairlabs.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Voltair. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
