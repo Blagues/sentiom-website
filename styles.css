@@ -143,6 +143,42 @@ body {
     color: hsl(var(--primary));
 }
 
+/* Cycling word animation */
+.cycling-word {
+    display: inline-block;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.cycling-word.flip-out {
+    animation: flipOut 0.6s ease forwards;
+}
+
+.cycling-word.flip-in {
+    animation: flipIn 0.6s ease forwards;
+}
+
+@keyframes flipOut {
+    0% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+}
+
+@keyframes flipIn {
+    0% {
+        transform: rotateX(-90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
 .hero-text p {
     font-size: 20px;
     line-height: 1.5;

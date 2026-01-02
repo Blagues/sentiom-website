@@ -26,7 +26,7 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-text">
-                <h1>Onderzoek sentiment <span class="highlight">zonder</span> persoonsgegevens te gebruiken</h1>
+                <h1>Een <span class="highlight cycling-word">beter</span><br>beeld van wat er speelt in jouw gemeente</h1>
                 <div class="hero-buttons">
                     <a href="#rd" class="btn-primary">Meld je aan voor de Alpha</a>
                     <a href="#contact" class="btn-secondary">Contact</a>
@@ -220,5 +220,34 @@
             <p>© 2025 Voltair. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Cycle through words in hero heading with flip animation
+        const words = ['beter', 'slimmer', 'sneller', 'actueler'];
+        let currentIndex = 0;
+        const cyclingElement = document.querySelector('.cycling-word');
+
+        function cycleWord() {
+            // Flip out animation
+            cyclingElement.classList.add('flip-out');
+
+            setTimeout(() => {
+                // Change word
+                currentIndex = (currentIndex + 1) % words.length;
+                cyclingElement.textContent = words[currentIndex];
+
+                // Remove flip-out and add flip-in
+                cyclingElement.classList.remove('flip-out');
+                cyclingElement.classList.add('flip-in');
+
+                setTimeout(() => {
+                    cyclingElement.classList.remove('flip-in');
+                }, 600);
+            }, 600);
+        }
+
+        // Change word every 3 seconds
+        setInterval(cycleWord, 3000);
+    </script>
 </body>
 </html>
