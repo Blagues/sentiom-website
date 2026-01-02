@@ -7,23 +7,29 @@
 }
 
 :root {
-    /* Sentiom Blue Color Scheme */
-    --primary: 216 58% 48%;
-    --primary-foreground: 0 0% 100%;
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    --border: 0 0% 90%;
+    /* Sentiom Blue Color Scheme - #343FD5 + Variations */
+    --primary: 236 66% 52%;              /* #343FD5 - Main blue */
+    --primary-dark: 236 66% 37%;         /* #1F27A3 - Darker for hover */
+    --primary-light: 236 66% 90%;        /* #E0E3FB - Light backgrounds */
+    --primary-muted: 236 30% 70%;        /* #9BA1D4 - Subtle accents */
+
+    --primary-foreground: 0 0% 100%;     /* White text on primary */
+    --background: 0 0% 100%;             /* White background */
+    --foreground: 0 0% 0%;               /* Black text */
+    --muted: 236 30% 96%;                /* #F5F6FB - Muted backgrounds */
+    --muted-foreground: 0 0% 45%;        /* #737373 - Muted text */
+    --border: 236 20% 90%;               /* #E1E3F0 - Borders */
 
     /* Legacy CSS vars */
-    --color-primary: #2E5EAA;
-    --color-dark: #2E3478;
+    --color-primary: #343FD5;
+    --color-primary-dark: #1F27A3;
+    --color-primary-light: #E0E3FB;
+    --color-primary-muted: #9BA1D4;
     --color-text: #000000;
     --color-text-muted: #737373;
-    --color-border: #E5E5E5;
+    --color-border: #E1E3F0;
     --color-bg: #FFFFFF;
-    --color-bg-subtle: #F5F5F5;
+    --color-bg-subtle: #F5F6FB;
 }
 
 html {
