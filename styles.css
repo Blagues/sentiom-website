@@ -279,9 +279,10 @@ body {
 }
 
 .partners-logos img {
-    height: 120px;
+    height: 180px;
     width: auto;
     opacity: 1;
+    object-fit: contain;
 }
 
 /* TWO COLUMN SECTIONS */
@@ -762,7 +763,8 @@ footer {
 
     /* Partners logos */
     .partners-logos img {
-        max-height: 60px;
+        height: 90px;
+        max-height: 90px;
     }
 
     /* Nieuws badges op mobiel */
@@ -862,7 +864,8 @@ footer {
     }
 
     .partners-logos img {
-        max-height: 50px;
+        height: 75px;
+        max-height: 75px;
     }
 
     .feature-card-image {
