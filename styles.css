@@ -762,9 +762,23 @@ footer {
     }
 
     /* Partners logos */
+    .partners-logos {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 24px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .partners-logos::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+
     .partners-logos img {
-        height: 90px;
-        max-height: 90px;
+        height: 120px;
+        max-height: 120px;
+        min-width: 150px;
+        flex-shrink: 0;
     }
 
     /* Nieuws badges op mobiel */
@@ -859,13 +873,15 @@ footer {
     }
 
     .partners-logos {
-        flex-direction: column;
-        gap: 16px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 32px;
     }
 
     .partners-logos img {
-        height: 75px;
-        max-height: 75px;
+        height: 100px;
+        max-height: 100px;
+        min-width: 140px;
     }
 
     .feature-card-image {
