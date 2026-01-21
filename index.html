@@ -24,13 +24,17 @@
     <meta property="twitter:description" content="Sentiom volgt doorlopend wat er speelt binnen uw gemeente. Nieuws, social media en beleidsontwikkelingen samengebracht in één overzicht.">
     <meta property="twitter:image" content="https://sentiom.nl/images/og/sentiom-og-image.png">
 
-    <!-- Favicon (adaptive: black in light mode, white in dark mode) -->
-    <link rel="icon" type="image/svg+xml" href="own logo files/SVG/Logomark black.svg" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/svg+xml" href="own logo files/SVG/Logomark white.svg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" href="own logo files/PNG/Favicon@4x.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="own logo files/SVG/Logmark blue.svg">
+    <link rel="icon" type="image/png" href="own logo files/PNG/Logmark blue@4x.png">
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#FAFAFA">
+
+    <!-- Google Fonts - Plus Jakarta Sans for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 
     <!-- Preload Critical Hero Image -->
     <link rel="preload" as="image" href="images/egghall-1920w.avif" type="image/avif">
@@ -201,7 +205,8 @@
     </section>
 
     <!-- Terrain Access -->
-    <section class="section-full-image alpha-section" style="min-height: 700px; padding: 150px 0; margin-top: 80px; position: relative; overflow: hidden;">
+    <section class="section-full-image alpha-section" id="alpha-section" style="min-height: 700px; padding: 150px 0; margin-top: 80px; position: relative; overflow: hidden;">
+        <div class="spotlight-overlay"></div>
         <picture style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
             <source
                 media="(max-width: 768px)"
@@ -311,32 +316,74 @@
     </footer>
 
     <script>
-        // Cycle through words in hero heading with flip animation
+        // Cycle through words in hero heading with slide + blur animation
         const words = ['Beter', 'Slimmer', 'Sneller', 'Actueler'];
         let currentIndex = 0;
         const cyclingElement = document.querySelector('.cycling-word');
 
         function cycleWord() {
-            // Flip out animation
-            cyclingElement.classList.add('flip-out');
+            // Slide out animation
+            cyclingElement.classList.add('slide-out');
 
             setTimeout(() => {
                 // Change word
                 currentIndex = (currentIndex + 1) % words.length;
                 cyclingElement.textContent = words[currentIndex];
 
-                // Remove flip-out and add flip-in
-                cyclingElement.classList.remove('flip-out');
-                cyclingElement.classList.add('flip-in');
+                // Remove slide-out and add slide-in
+                cyclingElement.classList.remove('slide-out');
+                cyclingElement.classList.add('slide-in');
 
                 setTimeout(() => {
-                    cyclingElement.classList.remove('flip-in');
-                }, 600);
-            }, 600);
+                    cyclingElement.classList.remove('slide-in');
+                }, 450);
+            }, 450);
         }
 
-        // Change word every 3 seconds
-        setInterval(cycleWord, 3000);
+        // Change word every 5 seconds
+        setInterval(cycleWord, 5000);
+
+        // Spotlight effect for alpha section
+        const alphaSection = document.getElementById('alpha-section');
+        const spotlightOverlay = alphaSection.querySelector('.spotlight-overlay');
+        const ctaButton = alphaSection.querySelector('.btn-cta-large');
+        const spotlightRadius = 120;
+
+        alphaSection.addEventListener('mouseenter', () => {
+            spotlightOverlay.classList.add('active');
+        });
+
+        alphaSection.addEventListener('mouseleave', () => {
+            spotlightOverlay.classList.remove('active');
+            ctaButton.classList.remove('illuminated');
+        });
+
+        alphaSection.addEventListener('mousemove', (e) => {
+            const rect = alphaSection.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+            spotlightOverlay.style.setProperty('--mouse-x', x + '%');
+            spotlightOverlay.style.setProperty('--mouse-y', y + '%');
+
+            // Check if spotlight is near the button
+            const btnRect = ctaButton.getBoundingClientRect();
+            const btnCenterX = btnRect.left + btnRect.width / 2;
+            const btnCenterY = btnRect.top + btnRect.height / 2;
+            const distance = Math.hypot(e.clientX - btnCenterX, e.clientY - btnCenterY);
+
+            // Update light position on button (relative to button)
+            const lightX = ((e.clientX - btnRect.left) / btnRect.width) * 100;
+            const lightY = ((e.clientY - btnRect.top) / btnRect.height) * 100;
+            ctaButton.style.setProperty('--light-x', lightX + '%');
+            ctaButton.style.setProperty('--light-y', lightY + '%');
+
+            if (distance < spotlightRadius + btnRect.width / 2) {
+                ctaButton.classList.add('illuminated');
+            } else {
+                ctaButton.classList.remove('illuminated');
+            }
+        });
     </script>
 </body>
 </html>
