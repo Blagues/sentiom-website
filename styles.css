@@ -110,6 +110,23 @@ body {
     color: hsl(var(--primary));
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-login {
+    font-size: 16px;
+    color: hsl(var(--foreground));
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav-login:hover {
+    color: hsl(var(--primary));
+}
+
 .nav-cta {
     background-color: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
@@ -954,6 +971,14 @@ footer {
 
     .nav-menu {
         display: none;
+    }
+
+    .nav-actions {
+        gap: 16px;
+    }
+
+    .nav-login {
+        font-size: 14px;
     }
 
     .nav-cta {
