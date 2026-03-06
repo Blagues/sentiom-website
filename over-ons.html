@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over Ons - Sentiom</title>
+    <meta name="description" content="Leer meer over Sentiom, ons team, onze missie en het verhaal achter het platform voor gemeentelijke beleidsintelligentie.">
+    <meta name="author" content="DataDoor">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="own logo files/SVG/Logmark blue.svg">
+    <link rel="icon" type="image/png" href="own logo files/PNG/Logmark blue@4x.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#FAFAFA">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .nav-active {
+            color: hsl(236 66% 52%) !important;
+            font-weight: 600 !important;
+        }
+
+        /* TEAM SECTION — matches section-features dark style */
+        .section-team {
+            padding: 60px 0;
+            background-color: hsl(var(--background));
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 56px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-header h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: hsl(var(--primary));
+            letter-spacing: -0.01em;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .team-card {
+            background: hsl(var(--muted));
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid hsl(var(--border));
+            width: 280px;
+            transition: all 0.2s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            border-color: hsl(var(--shadow-dark));
+        }
+
+        .team-avatar {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .team-card-content {
+            padding: 20px 24px;
+        }
+
+        .team-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin-bottom: 4px;
+        }
+
+        .team-role {
+            font-size: 14px;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 12px;
+        }
+
+        .team-linkedin {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: hsl(var(--primary));
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .team-linkedin:hover {
+            opacity: 0.7;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            position: relative;
+            margin-top: 56px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: calc(16.66% + 16px);
+            right: calc(16.66% + 16px);
+            height: 2px;
+            background: hsl(0 0% 20%);
+            z-index: 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 16px;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: hsl(var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 0 6px hsl(236 66% 52% / 0.1);
+        }
+
+        .timeline-dot svg { color: white; }
+
+        .timeline-date {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: hsl(var(--primary));
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: hsl(var(--primary-foreground));
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 14px;
+            color: hsl(var(--muted-foreground));
+            line-height: 1.5;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .timeline {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .timeline::before { display: none; }
+            .timeline-item {
+                flex-direction: row;
+                text-align: left;
+                gap: 20px;
+            }
+            .timeline-dot { flex-shrink: 0; margin-bottom: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .team-card { width: 100%; }
+            .team-avatar { height: 240px; }
+            .team-header h2 { font-size: 32px; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-menu { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="own logo files/SVG/Logo Blue.svg" alt="Sentiom Logo">
+            </a>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="index.html#news">Nieuws</a>
+                <a href="over-ons.html" class="nav-active">Over Ons</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://app.sentiom.nl" class="nav-login">Inloggen</a>
+                <a href="mailto:contact@sentiom.nl" class="nav-cta">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Team Section — dark, matches section-features -->
+        <section class="section-team">
+            <div class="features-container">
+                <div class="team-header">
+                    <h2>Ons Team</h2>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <picture>
+                                <source srcset="images/team-kenzo.webp" type="image/webp">
+                                <img src="images/team-kenzo.jpg" alt="Kenzo Heijman" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="team-card-content">
+                            <p class="team-name">Kenzo Heijman</p>
+                            <p class="team-role">Co-founder & CPO</p>
+                            <a href="https://www.linkedin.com/in/kenzo-h-6253411a4/" target="_blank" class="team-linkedin">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <picture>
+                                <source srcset="images/team-robert.webp" type="image/webp">
+                                <img src="images/team-robert.jpg" alt="Robert van Poeteren" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="team-card-content">
+                            <p class="team-name">Robert van Poeteren</p>
+                            <p class="team-role">Co-founder & CEO</p>
+                            <a href="https://www.linkedin.com/in/robert-van-poeteren/" target="_blank" class="team-linkedin">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">
+                            <picture>
+                                <source srcset="images/team-ignace.webp" type="image/webp">
+                                <img src="images/team-ignace.jpg" alt="Ignace Konig" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="team-card-content">
+                            <p class="team-name">Ignace Konig</p>
+                            <p class="team-role">Co-founder & CTO</p>
+                            <a href="https://www.linkedin.com/in/ignace-konig-52b965205/" target="_blank" class="team-linkedin">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Missie & Visie -->
+        <section class="section-two-col">
+            <div class="two-col-container">
+                <div class="two-col-text">
+                    <h2>Onze Missie</h2>
+                    <p>Gemeenten een helder en actueel beeld geven van wat er speelt, zodat beleidsmakers sneller en beter kunnen beslissen.</p>
+                </div>
+                <div class="two-col-text">
+                    <h2>Onze Visie</h2>
+                    <p>Een toekomst waarin elke gemeente toegang heeft tot real-time beleidsintelligentie, aangedreven door AI.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="own logo files/SVG/Logo White.svg" alt="Sentiom" class="footer-logo">
+                <p class="footer-contact">
+                    <a href="https://www.linkedin.com/company/sentiom-org" target="_blank" aria-label="Connect on LinkedIn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="mailto:contact@sentiom.nl">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+                        contact@sentiom.nl
+                    </a>
+                </p>
+                <p>Een beter beeld van wat speelt in jouw gemeente</p>
+            </div>
+            <div class="footer-column">
+                <h4>Snelle Links</h4>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="over-ons.html">Over Ons</a></p>
+                <p><a href="index.html#news">Nieuws</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Sentiom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
