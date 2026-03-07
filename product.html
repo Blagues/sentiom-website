@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - Sentiom</title>
+    <meta name="description" content="Ontdek de features van Sentiom: dagelijkse updates, automatische rapporten en een social media inbox voor gemeenten.">
+    <meta name="author" content="DataDoor">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="own logo files/SVG/Logmark blue.svg">
+    <link rel="icon" type="image/png" href="own logo files/PNG/Logmark blue@4x.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#FAFAFA">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .nav-active {
+            color: hsl(236 66% 52%) !important;
+            font-weight: 600 !important;
+        }
+
+        /* Mockup placeholder */
+        .mockup-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background-color: hsl(var(--muted));
+            border: 1px solid hsl(var(--border));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: hsl(var(--muted-foreground));
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Product page layout overrides */
+        .product-section .two-col-container {
+            grid-template-columns: 1fr 1.4fr;
+        }
+
+        .product-section-reverse .two-col-container {
+            grid-template-columns: 1.4fr 1fr;
+        }
+
+        .two-col-image picture {
+            display: block;
+        }
+
+        .mockup-img {
+            width: 100%;
+            height: auto !important;
+            display: block;
+            border-radius: 0;
+            box-shadow: none;
+            object-fit: unset;
+        }
+
+        .btn-preview {
+            display: inline-block;
+            margin-top: 16px;
+            color: hsl(var(--primary));
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 0.75;
+            transition: opacity 0.2s;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .btn-preview:hover {
+            opacity: 1;
+        }
+
+        /* Carousel lightbox */
+        #carousel-lightbox {
+            position: fixed;
+            inset: 0;
+            background: hsl(0 0% 0% / 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 900;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            backdrop-filter: blur(6px);
+        }
+
+        #carousel-lightbox.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .carousel-inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #carousel-lightbox img {
+            max-width: 80vw;
+            max-height: 85vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        .carousel-btn {
+            background: hsl(0 0% 100% / 0.15);
+            border: none;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background: hsl(0 0% 100% / 0.3);
+        }
+
+
+        .carousel-dots {
+            position: absolute;
+            bottom: -32px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: hsl(0 0% 100% / 0.35);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .carousel-dot.active {
+            background: white;
+        }
+
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            background: hsl(0 0% 0% / 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 900;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            backdrop-filter: blur(6px);
+            cursor: zoom-out;
+        }
+
+        #lightbox.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        @media (max-width: 480px) {
+            .nav-menu { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="own logo files/SVG/Logo Blue.svg" alt="Sentiom Logo">
+            </a>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="product.html" class="nav-active">Product</a>
+                <a href="over-ons.html">Over Ons</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://app.sentiom.nl" class="nav-login">Inloggen</a>
+                <a href="mailto:contact@sentiom.nl" class="nav-cta">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Feature 1: Dagelijkse Updates -->
+        <section class="section-two-col product-section">
+            <div class="two-col-container">
+                <div class="two-col-text">
+                    <h2>Dagelijkse Updates</h2>
+                    <p>Elke ochtend een overzichtelijk rapport met de belangrijkste ontwikkelingen binnen uw gemeente. Altijd op de hoogte, zonder tijd te verliezen.</p>
+                    <button class="btn-preview" onclick="openLightbox()">Bekijk deze update &rarr;</button>
+                </div>
+                <div class="two-col-image">
+                    <picture>
+                        <source srcset="images/mockup-dagelijkse-update-800w.webp 800w, images/mockup-dagelijkse-update-1200w.webp 1200w" type="image/webp">
+                        <img class="mockup-img"
+                            src="images/mockup-dagelijkse-update-1200w.jpg"
+                            srcset="images/mockup-dagelijkse-update-800w.jpg 800w, images/mockup-dagelijkse-update-1200w.jpg 1200w"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            alt="Dagelijkse Updates mockup"
+                            loading="lazy">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 2: Automatisch Rapporten Genereren -->
+        <section class="section-two-col-reverse product-section-reverse">
+            <div class="two-col-container">
+                <div class="two-col-image">
+                    <picture>
+                        <source srcset="images/mockup-rapport-800w.webp 800w, images/mockup-rapport-1200w.webp 1200w" type="image/webp">
+                        <img class="mockup-img"
+                            src="images/mockup-rapport-1200w.jpg"
+                            srcset="images/mockup-rapport-800w.jpg 800w, images/mockup-rapport-1200w.jpg 1200w"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            alt="Rapport mockup"
+                            loading="lazy">
+                    </picture>
+                </div>
+                <div class="two-col-text">
+                    <h2>Automatisch Rapporten Genereren</h2>
+                    <p>Sentiom stelt automatisch rapporten samen op basis van actuele data. Direct inzetbaar binnen uw organisatie, zonder handmatig werk.</p>
+                    <button class="btn-preview" onclick="openCarousel()">Bekijk een voorbeeldrapport &rarr;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 3: Social Media Inbox -->
+        <section class="section-two-col product-section">
+            <div class="two-col-container">
+                <div class="two-col-text">
+                    <h2>Social Media Inbox</h2>
+                    <p>Volg wat burgers zeggen op sociale media in één overzicht. Signaleer trends en sentimenten vroegtijdig, zodat u proactief kunt reageren.</p>
+                </div>
+                <div class="two-col-image">
+                    <picture>
+                        <source srcset="images/mockup-social-media-800w.webp 800w, images/mockup-social-media-1200w.webp 1200w" type="image/webp">
+                        <img class="mockup-img"
+                            src="images/mockup-social-media-1200w.jpg"
+                            srcset="images/mockup-social-media-800w.jpg 800w, images/mockup-social-media-1200w.jpg 1200w"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            alt="Social Media Inbox mockup"
+                            loading="lazy">
+                    </picture>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="shared-sections"></div>
+    <script src="page-sections.js"></script>
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+    <script src="footer.js"></script>
+    <!-- Lightbox (dagelijkse update) -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <img src="images/dagelijkse-update-preview.webp" alt="Dagelijkse update voorbeeld">
+    </div>
+
+    <!-- Carousel lightbox (rapporten) -->
+    <div id="carousel-lightbox">
+        <div class="carousel-inner">
+            <button class="carousel-btn" onclick="carouselPrev()">&#8592;</button>
+            <div style="position:relative;">
+                <img id="carousel-img" src="" alt="Rapport voorbeeld">
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+            <button class="carousel-btn" onclick="carouselNext()">&#8594;</button>
+        </div>
+    </div>
+
+    <script>
+        // Dagelijkse update lightbox
+        function openLightbox() { document.getElementById('lightbox').classList.add('visible'); }
+        function closeLightbox() { document.getElementById('lightbox').classList.remove('visible'); }
+
+        // Rapport carousel
+        const rapportImages = [
+            'images/rapport-preview-1.webp',
+            'images/rapport-preview-2.webp',
+            'images/rapport-preview-3.webp',
+            'images/rapport-preview-4.webp',
+        ];
+        let carouselIndex = 0;
+
+        function openCarousel() {
+            carouselIndex = 0;
+            renderCarousel();
+            document.getElementById('carousel-lightbox').classList.add('visible');
+        }
+
+        function closeCarousel() {
+            document.getElementById('carousel-lightbox').classList.remove('visible');
+        }
+
+        function renderCarousel() {
+            document.getElementById('carousel-img').src = rapportImages[carouselIndex];
+            const dots = document.getElementById('carousel-dots');
+            dots.innerHTML = rapportImages.map((_, i) =>
+                `<div class="carousel-dot${i === carouselIndex ? ' active' : ''}" onclick="goToSlide(${i})"></div>`
+            ).join('');
+        }
+
+        function carouselNext() { carouselIndex = (carouselIndex + 1) % rapportImages.length; renderCarousel(); }
+        function carouselPrev() { carouselIndex = (carouselIndex - 1 + rapportImages.length) % rapportImages.length; renderCarousel(); }
+        function goToSlide(i) { carouselIndex = i; renderCarousel(); }
+
+        document.getElementById('carousel-lightbox').addEventListener('click', e => {
+            if (e.target === document.getElementById('carousel-lightbox')) closeCarousel();
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') { closeLightbox(); closeCarousel(); }
+            if (e.key === 'ArrowRight') carouselNext();
+            if (e.key === 'ArrowLeft') carouselPrev();
+        });
+    </script>
+</body>
+</html>
