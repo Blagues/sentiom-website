@@ -11,7 +11,17 @@ document.getElementById('shared-sections').innerHTML = `
         </picture>
         <div class="full-image-overlay">
             <h2>Sentiom is nu in Beta fase</h2>
-<a href="mailto:contact@sentiom.nl" class="btn-primary btn-cta-large">Meld je nu aan</a>
+            <form class="aanmeld-form" id="aanmeld-form-shared">
+                <input type="hidden" name="access_key" value="9332ad0c-08e2-4730-a502-5131d56d698f">
+                <input type="hidden" name="subject" value="Nieuwe aanmelding - Sentiom Beta">
+                <input type="text" name="naam" placeholder="Naam" required>
+                <input type="email" name="email" placeholder="E-mailadres" required>
+                <input type="tel" name="telefoon" placeholder="Telefoonnummer (optioneel)">
+                <input type="text" name="gemeente" placeholder="Gemeente (optioneel)">
+                <textarea name="vraag" placeholder="Vraag / Opmerking (optioneel)"></textarea>
+                <button type="submit" class="btn-primary btn-cta-large">Meld je nu aan</button>
+            </form>
+            <p class="form-success" id="form-success-shared">We nemen zo snel mogelijk contact met u op!</p>
         </div>
     </section>
 
@@ -41,3 +51,12 @@ document.getElementById('shared-sections').innerHTML = `
     </section>
 `;
 
+document.getElementById('aanmeld-form-shared').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(this);
+    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+    if (res.ok) {
+        this.style.display = 'none';
+        document.getElementById('form-success-shared').style.display = 'block';
+    }
+});
