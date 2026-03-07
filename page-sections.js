@@ -1,6 +1,6 @@
 document.getElementById('shared-sections').innerHTML = `
     <!-- Alpha Section -->
-    <section class="section-full-image alpha-section" id="alpha-section" style="min-height: 700px; padding: 150px 0; margin-top: 80px; position: relative; overflow: hidden;">
+    <section class="section-full-image alpha-section" id="alpha-section">
         <div style="position: absolute; inset: 0; background: hsl(0 0% 0% / 0.35); z-index: 0;"></div>
         <picture style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
             <source media="(max-width: 768px)" srcset="images/ns-train-horizontal-1000w.webp" type="image/webp">

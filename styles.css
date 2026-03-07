@@ -539,6 +539,12 @@ body {
     display: none;
 }
 
+.alpha-section {
+    min-height: 700px;
+    padding: 100px 0;
+    margin-top: 80px;
+}
+
 /* Spotlight effect */
 .spotlight-overlay {
     position: absolute;
@@ -849,9 +855,12 @@ footer {
         order: 0;
     }
 
-    .features-grid,
-    .three-col-grid {
+    .features-grid {
         grid-template-columns: 1fr;
+    }
+
+    .three-col-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .hero-text h1 {
@@ -893,6 +902,12 @@ footer {
         font-size: 14px;
     }
 
+    .nav-container {
+        gap: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
     .hero-text h1 {
         font-size: 32px;
         margin-bottom: 24px;
@@ -909,10 +924,19 @@ footer {
     }
 
     /* Alpha fase sectie op mobiel */
-    .section-full-image {
-        min-height: 500px !important;
-        padding: 80px 0 !important;
-        margin-top: 40px !important;
+    .alpha-section {
+        min-height: auto;
+        padding: 64px 0;
+        margin-top: 40px;
+    }
+
+    .full-image-overlay {
+        padding: 40px 24px;
+    }
+
+    .hero-image {
+        min-height: 280px;
+        height: 45vh;
     }
 
     .full-image-overlay h2 {
@@ -1001,6 +1025,12 @@ footer {
     }
 }
 
+@media (max-width: 600px) {
+    .three-col-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Extra small screens */
 @media (max-width: 480px) {
     .hero-text h1 {
@@ -1008,9 +1038,9 @@ footer {
         line-height: 1.2;
     }
 
-    .section-full-image {
-        min-height: 400px !important;
-        padding: 60px 0 !important;
+    .alpha-section {
+        padding: 48px 0;
+        margin-top: 24px;
     }
 
     .full-image-overlay h2 {
@@ -1023,10 +1053,6 @@ footer {
 
     .features-header h2 {
         font-size: 28px;
-    }
-
-    .nav-menu {
-        display: none;
     }
 
     .nav-actions {
