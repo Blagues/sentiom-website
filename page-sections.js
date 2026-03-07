@@ -1,7 +1,7 @@
 document.getElementById('shared-sections').innerHTML = `
     <!-- Alpha Section -->
     <section class="section-full-image alpha-section" id="alpha-section" style="min-height: 700px; padding: 150px 0; margin-top: 80px; position: relative; overflow: hidden;">
-        <div class="spotlight-overlay"></div>
+        <div style="position: absolute; inset: 0; background: hsl(0 0% 0% / 0.35); z-index: 0;"></div>
         <picture style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
             <source media="(max-width: 768px)" srcset="images/ns-train-horizontal-1000w.webp" type="image/webp">
             <source media="(max-width: 1024px)" srcset="images/ns-train-horizontal-1600w.webp" type="image/webp">
@@ -10,9 +10,8 @@ document.getElementById('shared-sections').innerHTML = `
                 style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom;">
         </picture>
         <div class="full-image-overlay">
-            <h2>Sentiom is nu in Alpha fase</h2>
-            <h3>Participatie is kosteloos en op aanvraag</h3>
-            <a href="mailto:contact@sentiom.nl" class="btn-primary btn-cta-large">Meld je nu aan</a>
+            <h2>Sentiom is nu in Beta fase</h2>
+<a href="mailto:contact@sentiom.nl" class="btn-primary btn-cta-large">Meld je nu aan</a>
         </div>
     </section>
 
@@ -42,15 +41,3 @@ document.getElementById('shared-sections').innerHTML = `
     </section>
 `;
 
-// Spotlight effect
-const overlay = document.querySelector('#alpha-section .spotlight-overlay');
-const section = document.getElementById('alpha-section');
-if (overlay && section) {
-    section.addEventListener('mousemove', e => {
-        const rect = section.getBoundingClientRect();
-        overlay.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-        overlay.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
-        overlay.classList.add('active');
-    });
-    section.addEventListener('mouseleave', () => overlay.classList.remove('active'));
-}

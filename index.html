@@ -87,7 +87,7 @@
             <div class="hero-text">
                 <h1>Een <span class="highlight cycling-word">Beter</span><br>Beeld Van Wat Speelt In Jouw Gemeente</h1>
                 <div class="hero-buttons">
-                    <a href="mailto:contact@sentiom.nl" class="btn-primary">Meld je aan voor de Alpha</a>
+                    <a href="mailto:contact@sentiom.nl" class="btn-primary">Meld je aan voor de Beta</a>
                     <a href="mailto:contact@sentiom.nl" class="btn-secondary">Contact</a>
                 </div>
             </div>
@@ -118,28 +118,12 @@
         </div>
     </section>
 
-    <!-- Partners Section -->
-    <section class="partners-section">
-        <div class="partners-container">
-            <div class="partners-logos">
-<a href="https://datadoor.nl/" target="_blank">
-                    <picture>
-                        <source srcset="logos/datadoor-200w.webp 1x, logos/datadoor-400w.webp 2x" type="image/webp">
-                        <img src="logos/datadoor-200w.png" srcset="logos/datadoor-400w.png 2x" alt="DataDoor" width="100" height="100" loading="lazy">
-                    </picture>
-                </a>
-            </div>
-            <p class="partners-label">Onze Partners</p>
-        </div>
-    </section>
-
     <!-- AI + Drone Inspections -->
-    <section id="service" class="section-two-col">
+    <section id="service" class="section-two-col-reverse">
         <div class="two-col-container">
             <div class="two-col-text">
-                <h2>Meer Inzicht, Minder Tijd</h2>
-                <p>Sentiom volgt doorlopend wat er speelt binnen uw gemeente. Nieuws, social media en beleidsontwikkelingen worden samengebracht in één overzicht.</p>
-                <p>Zo beschikt u altijd over actuele en relevante context voor onderbouwde beleidskeuzes.</p>
+                <h2>Meer inzicht, minder tijd</h2>
+                <p>Sentiom volgt doorlopend wat er speelt binnen uw gemeente. Social media, nieuws en beleidsontwikkelingen worden met AI samengebracht in één overzicht, met dagelijkse rapportages en automatisch gegenereerde verdiepingsrapporten. Zo beschikt u altijd over actuele context voor onderbouwde beleidskeuzes, zonder handmatig zoekwerk.</p>
             </div>
             <div class="two-col-image">
                 <picture>
@@ -169,8 +153,12 @@
     </section>
 
     <!-- Lineman Safety -->
-    <section class="section-two-col-reverse">
+    <section class="section-two-col">
         <div class="two-col-container">
+            <div class="two-col-text">
+                <h2>Dichter bij uw inwoners</h2>
+                <p>Inzicht is pas waardevol als het leidt tot actie. Reageer direct op vragen, opmerkingen en suggesties van inwoners, zodat u vanuit de organisatie kunt inspelen op wat er leeft. Zo verkleint u het communicatieve gat tussen gemeente en burger.</p>
+            </div>
             <div class="two-col-image">
                 <picture>
                     <source
@@ -195,16 +183,27 @@
                         loading="lazy">
                 </picture>
             </div>
-            <div class="two-col-text">
-                <h2>Automatische Dagelijkse Updates</h2>
-                <p>Elke ochtend ontvangt u een overzichtelijk rapport met de belangrijkste ontwikkelingen binnen uw gemeente, direct inzetbaar binnen uw organisatie. Zo blijft u moeiteloos op de hoogte.</p>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="partners-container">
+            <div class="partners-logos">
+                <a href="https://datadoor.nl/" target="_blank">
+                    <picture>
+                        <source srcset="logos/datadoor-200w.webp 1x, logos/datadoor-400w.webp 2x" type="image/webp">
+                        <img src="logos/datadoor-200w.png" srcset="logos/datadoor-400w.png 2x" alt="DataDoor" width="100" height="100" loading="lazy">
+                    </picture>
+                </a>
             </div>
+            <p class="partners-label">Onze Partners</p>
         </div>
     </section>
 
     <!-- Terrain Access -->
     <section class="section-full-image alpha-section" id="alpha-section" style="min-height: 700px; padding: 150px 0; margin-top: 80px; position: relative; overflow: hidden;">
-        <div class="spotlight-overlay"></div>
+        <div style="position: absolute; inset: 0; background: hsl(0 0% 0% / 0.35); z-index: 0;"></div>
         <picture style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
             <source
                 media="(max-width: 768px)"
@@ -235,9 +234,8 @@
                 style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom;">
         </picture>
         <div class="full-image-overlay">
-            <h2>Sentiom is nu in Alpha fase</h2>
-            <h3>Participatie is kosteloos en op aanvraag</h3>
-            <a href="mailto:contact@sentiom.nl" class="btn-primary btn-cta-large">Meld je nu aan</a>
+            <h2>Sentiom is nu in Beta fase</h2>
+<a href="mailto:contact@sentiom.nl" class="btn-primary btn-cta-large">Meld je nu aan</a>
         </div>
     </section>
 
@@ -314,47 +312,6 @@
         // Change word every 5 seconds
         setInterval(cycleWord, 5000);
 
-        // Spotlight effect for alpha section
-        const alphaSection = document.getElementById('alpha-section');
-        const spotlightOverlay = alphaSection.querySelector('.spotlight-overlay');
-        const ctaButton = alphaSection.querySelector('.btn-cta-large');
-        const spotlightRadius = 120;
-
-        alphaSection.addEventListener('mouseenter', () => {
-            spotlightOverlay.classList.add('active');
-        });
-
-        alphaSection.addEventListener('mouseleave', () => {
-            spotlightOverlay.classList.remove('active');
-            ctaButton.classList.remove('illuminated');
-        });
-
-        alphaSection.addEventListener('mousemove', (e) => {
-            const rect = alphaSection.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-            spotlightOverlay.style.setProperty('--mouse-x', x + '%');
-            spotlightOverlay.style.setProperty('--mouse-y', y + '%');
-
-            // Check if spotlight is near the button
-            const btnRect = ctaButton.getBoundingClientRect();
-            const btnCenterX = btnRect.left + btnRect.width / 2;
-            const btnCenterY = btnRect.top + btnRect.height / 2;
-            const distance = Math.hypot(e.clientX - btnCenterX, e.clientY - btnCenterY);
-
-            // Update light position on button (relative to button)
-            const lightX = ((e.clientX - btnRect.left) / btnRect.width) * 100;
-            const lightY = ((e.clientY - btnRect.top) / btnRect.height) * 100;
-            ctaButton.style.setProperty('--light-x', lightX + '%');
-            ctaButton.style.setProperty('--light-y', lightY + '%');
-
-            if (distance < spotlightRadius + btnRect.width / 2) {
-                ctaButton.classList.add('illuminated');
-            } else {
-                ctaButton.classList.remove('illuminated');
-            }
-        });
     </script>
 </body>
 </html>
