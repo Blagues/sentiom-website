@@ -11,6 +11,7 @@ document.getElementById('shared-sections').innerHTML = `
         </picture>
         <div class="full-image-overlay">
             <h2>Sentiom is nu in Beta fase</h2>
+            <p class="beta-subtitle">Wij zijn op zoek naar gemeenten om mee te doen aan het ontwikkelingstraject</p>
             <form class="aanmeld-form" id="aanmeld-form-shared">
                 <input type="hidden" name="access_key" value="9332ad0c-08e2-4730-a502-5131d56d698f">
                 <input type="hidden" name="subject" value="Nieuwe aanmelding - Sentiom Beta">

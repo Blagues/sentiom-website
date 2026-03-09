@@ -629,6 +629,13 @@ body {
     text-shadow: 0 2px 8px hsl(var(--shadow-dark));
 }
 
+.beta-subtitle {
+    font-size: 16px;
+    color: hsl(var(--primary-foreground) / 0.8);
+    margin-top: -8px;
+    margin-bottom: 24px;
+}
+
 .btn-cta-large {
     margin-top: 16px;
     position: relative;

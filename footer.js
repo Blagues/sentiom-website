@@ -11,7 +11,7 @@ document.getElementById('site-footer').innerHTML = `
                     contact@sentiom.nl
                 </a>
             </p>
-            <p>Een beter beeld van wat speelt in jouw gemeente</p>
+            <p>Wij zijn actief op zoek naar gemeenten om mee te doen aan het ontwikkelingstraject</p>
         </div>
         <div class="footer-column">
             <h4>Snelle Links</h4>
