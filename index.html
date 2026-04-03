@@ -60,6 +60,7 @@
     </script>
 
     <link rel="stylesheet" href="styles.css">
+    <script src="i18n.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -69,13 +70,17 @@
                 <img src="own logo files/SVG/Logo Blue.svg" alt="Sentiom Logo">
             </a>
             <div class="nav-menu">
-                <a href="#">Home</a>
-                <a href="product.html">Product</a>
-                <a href="over-ons.html">Over Ons</a>
+                <a href="#" data-i18n="nav.home">Home</a>
+                <a href="product.html" data-i18n="nav.product">Product</a>
+                <a href="over-ons.html" data-i18n="nav.about">Over Ons</a>
             </div>
             <div class="nav-actions">
-                <a href="https://app.sentiom.nl" class="nav-login">Inloggen</a>
-                <a href="mailto:contact@sentiom.nl" class="nav-cta">Contact</a>
+                <a href="https://app.sentiom.nl" class="nav-login" data-i18n="nav.login">Inloggen</a>
+                <a href="mailto:contact@sentiom.nl" class="nav-cta" data-i18n="nav.contact">Contact</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="nl" onclick="setLang('nl')" aria-label="Nederlands">&#127475;&#127473;</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLang('en')" aria-label="English">&#127468;&#127463;</button>
+                </div>
                 <button class="nav-hamburger" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -88,10 +93,10 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-text">
-                <h1>Een <span class="highlight cycling-word">Beter</span><br>Beeld Van Wat Speelt In Jouw Gemeente</h1>
+                <h1><span data-i18n="hero.prefix">Een</span> <span class="highlight cycling-word">Beter</span><br><span data-i18n="hero.suffix">Beeld Van Wat Speelt In Jouw Gemeente</span></h1>
                 <div class="hero-buttons">
-                    <a href="#alpha-section" class="btn-primary">Meld je aan voor de Beta</a>
-                    <a href="mailto:contact@sentiom.nl" class="btn-secondary">Contact</a>
+                    <a href="#alpha-section" class="btn-primary" data-i18n="hero.cta1">Meld je aan voor de Beta</a>
+                    <a href="mailto:contact@sentiom.nl" class="btn-secondary" data-i18n="hero.cta2">Contact</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -125,8 +130,8 @@
     <section id="service" class="section-two-col-reverse">
         <div class="two-col-container">
             <div class="two-col-text">
-                <h2>Meer inzicht, minder tijd</h2>
-                <p>Sentiom volgt doorlopend wat er speelt binnen uw gemeente. Social media, nieuws en beleidsontwikkelingen worden met AI samengebracht in één overzicht, met dagelijkse rapportages en automatisch gegenereerde verdiepingsrapporten. Zo beschikt u altijd over actuele context voor onderbouwde beleidskeuzes, zonder handmatig zoekwerk.</p>
+                <h2 data-i18n="section.insight_h2">Meer inzicht, minder tijd</h2>
+                <p data-i18n="section.insight_p">Sentiom volgt doorlopend wat er speelt binnen uw gemeente. Social media, nieuws en beleidsontwikkelingen worden met AI samengebracht in één overzicht, met dagelijkse rapportages en automatisch gegenereerde verdiepingsrapporten. Zo beschikt u altijd over actuele context voor onderbouwde beleidskeuzes, zonder handmatig zoekwerk.</p>
             </div>
             <div class="two-col-image">
                 <picture>
@@ -159,8 +164,8 @@
     <section class="section-two-col">
         <div class="two-col-container">
             <div class="two-col-text">
-                <h2>Dichter bij uw inwoners</h2>
-                <p>Inzicht is pas waardevol als het leidt tot actie. Reageer direct op vragen, opmerkingen en suggesties van inwoners, zodat u vanuit de organisatie kunt inspelen op wat er leeft. Zo verkleint u het communicatieve gat tussen gemeente en burger.</p>
+                <h2 data-i18n="section.closer_h2">Dichter bij uw inwoners</h2>
+                <p data-i18n="section.closer_p">Inzicht is pas waardevol als het leidt tot actie. Reageer direct op vragen, opmerkingen en suggesties van inwoners, zodat u vanuit de organisatie kunt inspelen op wat er leeft. Zo verkleint u het communicatieve gat tussen gemeente en burger.</p>
             </div>
             <div class="two-col-image">
                 <picture>
@@ -204,7 +209,7 @@
                     <img src="logos/rijswijk-200w.jpg" srcset="logos/rijswijk-400w.jpg 2x" alt="Gemeente Rijswijk" width="100" height="100" loading="lazy">
                 </picture>
             </div>
-            <p class="partners-label">Wij werken samen met</p>
+            <p class="partners-label" data-i18n="section.partners_label">Wij werken samen met</p>
         </div>
     </section>
 
@@ -219,20 +224,22 @@
 
     <script>
         // Cycle through words in hero heading with slide + blur animation
-        const words = ['Beter', 'Slimmer', 'Sneller', 'Actueler'];
+        let words = t('hero.words');
         let currentIndex = 0;
         const cyclingElement = document.querySelector('.cycling-word');
 
+        window.updateCyclingWords = function () {
+            words = t('hero.words');
+            cyclingElement.textContent = words[currentIndex];
+        };
+
         function cycleWord() {
-            // Slide out animation
             cyclingElement.classList.add('slide-out');
 
             setTimeout(() => {
-                // Change word
                 currentIndex = (currentIndex + 1) % words.length;
                 cyclingElement.textContent = words[currentIndex];
 
-                // Remove slide-out and add slide-in
                 cyclingElement.classList.remove('slide-out');
                 cyclingElement.classList.add('slide-in');
 

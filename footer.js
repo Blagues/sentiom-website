@@ -1,4 +1,5 @@
-document.getElementById('site-footer').innerHTML = `
+function renderFooter() {
+    document.getElementById('site-footer').innerHTML = `
     <div class="footer-container">
         <div class="footer-column">
             <img src="own logo files/SVG/Logo White.svg" alt="Sentiom" class="footer-logo">
@@ -11,16 +12,19 @@ document.getElementById('site-footer').innerHTML = `
                     contact@sentiom.nl
                 </a>
             </p>
-            <p>Wij zijn actief op zoek naar gemeenten om mee te doen aan het ontwikkelingstraject</p>
+            <p>${t('footer.description')}</p>
         </div>
         <div class="footer-column">
-            <h4>Snelle Links</h4>
-            <p><a href="index.html">Home</a></p>
-            <p><a href="product.html">Product</a></p>
-            <p><a href="over-ons.html">Over Ons</a></p>
+            <h4>${t('footer.quickLinks')}</h4>
+            <p><a href="index.html">${t('nav.home')}</a></p>
+            <p><a href="product.html">${t('nav.product')}</a></p>
+            <p><a href="over-ons.html">${t('footer.about')}</a></p>
         </div>
     </div>
     <div class="footer-bottom">
         <p>&copy; 2026 Sentiom. All rights reserved.</p>
     </div>
 `;
+}
+
+renderFooter();

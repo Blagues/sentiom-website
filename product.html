@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <script src="i18n.js"></script>
 
     <style>
         .nav-active {
@@ -210,13 +211,17 @@
                 <img src="own logo files/SVG/Logo Blue.svg" alt="Sentiom Logo">
             </a>
             <div class="nav-menu">
-                <a href="index.html">Home</a>
-                <a href="product.html" class="nav-active">Product</a>
-                <a href="over-ons.html">Over Ons</a>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="product.html" class="nav-active" data-i18n="nav.product">Product</a>
+                <a href="over-ons.html" data-i18n="nav.about">Over Ons</a>
             </div>
             <div class="nav-actions">
-                <a href="https://app.sentiom.nl" class="nav-login">Inloggen</a>
-                <a href="mailto:contact@sentiom.nl" class="nav-cta">Contact</a>
+                <a href="https://app.sentiom.nl" class="nav-login" data-i18n="nav.login">Inloggen</a>
+                <a href="mailto:contact@sentiom.nl" class="nav-cta" data-i18n="nav.contact">Contact</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="nl" onclick="setLang('nl')" aria-label="Nederlands">&#127475;&#127473;</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLang('en')" aria-label="English">&#127468;&#127463;</button>
+                </div>
                 <button class="nav-hamburger" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -229,9 +234,9 @@
         <section class="section-two-col product-section">
             <div class="two-col-container">
                 <div class="two-col-text">
-                    <h2>Dagelijkse Updates</h2>
-                    <p>Elke ochtend ontvangt u een met AI samengevat rapport per e-mail met de belangrijkste ontwikkelingen op social media in de afgelopen 24 uur. U kunt dit rapport aanpassen naar uw wensen en direct delen met de rest van uw organisatie via een vrij deelbare link.</p>
-                    <button class="btn-preview" onclick="openLightbox()">Bekijk deze update &rarr;</button>
+                    <h2 data-i18n="product.daily_h2">Dagelijkse Updates</h2>
+                    <p data-i18n="product.daily_p">Elke ochtend ontvangt u een met AI samengevat rapport per e-mail met de belangrijkste ontwikkelingen op social media in de afgelopen 24 uur. U kunt dit rapport aanpassen naar uw wensen en direct delen met de rest van uw organisatie via een vrij deelbare link.</p>
+                    <button class="btn-preview" onclick="openLightbox()" data-i18n="product.daily_btn">Bekijk deze update &rarr;</button>
                 </div>
                 <div class="two-col-image">
                     <picture>
@@ -262,9 +267,9 @@
                     </picture>
                 </div>
                 <div class="two-col-text">
-                    <h2>Automatisch Rapporten Genereren</h2>
-                    <p>Wilt u een onderwerp verder uitdiepen? Met één klik genereert u een volledig rapport, direct inzetbaar binnen de gemeente. Geen handmatig zoekwerk meer.</p>
-                    <button class="btn-preview" onclick="openCarousel()">Bekijk een voorbeeldrapport &rarr;</button>
+                    <h2 data-i18n="product.reports_h2">Automatisch Rapporten Genereren</h2>
+                    <p data-i18n="product.reports_p">Wilt u een onderwerp verder uitdiepen? Met één klik genereert u een volledig rapport, direct inzetbaar binnen de gemeente. Geen handmatig zoekwerk meer.</p>
+                    <button class="btn-preview" onclick="openCarousel()" data-i18n="product.reports_btn">Bekijk een voorbeeldrapport &rarr;</button>
                 </div>
             </div>
         </section>
@@ -273,8 +278,8 @@
         <section class="section-two-col product-section" style="padding-bottom: 160px;">
             <div class="two-col-container">
                 <div class="two-col-text">
-                    <h2>Social Media Inbox</h2>
-                    <p>Terugkoppeling naar inwoners is essentieel om de band tussen gemeente en burger te versterken. In de Social Media Inbox ziet u welke vragen, opmerkingen en suggesties er recent in uw gemeente zijn geplaatst, zodat u direct vanuit de gemeente kunt reageren op wat er leeft.</p>
+                    <h2 data-i18n="product.inbox_h2">Social Media Inbox</h2>
+                    <p data-i18n="product.inbox_p">Terugkoppeling naar inwoners is essentieel om de band tussen gemeente en burger te versterken. In de Social Media Inbox ziet u welke vragen, opmerkingen en suggesties er recent in uw gemeente zijn geplaatst, zodat u direct vanuit de gemeente kunt reageren op wat er leeft.</p>
                 </div>
                 <div class="two-col-image">
                     <picture>

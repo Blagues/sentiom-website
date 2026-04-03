@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <script src="i18n.js"></script>
 
     <style>
         .nav-active {
@@ -223,13 +224,17 @@
                 <img src="own logo files/SVG/Logo Blue.svg" alt="Sentiom Logo">
             </a>
             <div class="nav-menu">
-                <a href="index.html">Home</a>
-                <a href="product.html">Product</a>
-                <a href="over-ons.html" class="nav-active">Over Ons</a>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="product.html" data-i18n="nav.product">Product</a>
+                <a href="over-ons.html" class="nav-active" data-i18n="nav.about">Over Ons</a>
             </div>
             <div class="nav-actions">
-                <a href="https://app.sentiom.nl" class="nav-login">Inloggen</a>
-                <a href="mailto:contact@sentiom.nl" class="nav-cta">Contact</a>
+                <a href="https://app.sentiom.nl" class="nav-login" data-i18n="nav.login">Inloggen</a>
+                <a href="mailto:contact@sentiom.nl" class="nav-cta" data-i18n="nav.contact">Contact</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="nl" onclick="setLang('nl')" aria-label="Nederlands">&#127475;&#127473;</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLang('en')" aria-label="English">&#127468;&#127463;</button>
+                </div>
                 <button class="nav-hamburger" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -242,7 +247,7 @@
         <section class="section-team">
             <div class="features-container">
                 <div class="team-header">
-                    <h2>Ons Team</h2>
+                    <h2 data-i18n="about.team_h2">Ons Team</h2>
                 </div>
                 <div class="team-grid">
                     <div class="team-card">
@@ -300,8 +305,8 @@
         <!-- Wie wij zijn -->
         <section class="section-single" style="border-bottom: 1px solid hsl(var(--border));">
             <div class="single-container" style="text-align: center;">
-                <h2>Wie wij zijn</h2>
-                <p>Wij zijn drie TU Delft-studenten met een gedeelde passie voor AI en de publieke sector. Als leden van Epoch, het AI-studententeam van de TU Delft, hebben we ML-competities gewonnen en projecten met de overheid uitgevoerd. Nu zetten we die ervaring in om de communicatie tussen gemeentes en burgers te verbeteren met behulp van AI.</p>
+                <h2 data-i18n="about.who_h2">Wie wij zijn</h2>
+                <p data-i18n="about.who_p">Wij zijn drie TU Delft-studenten met een gedeelde passie voor AI en de publieke sector. Als leden van Epoch, het AI-studententeam van de TU Delft, hebben we ML-competities gewonnen en projecten met de overheid uitgevoerd. Nu zetten we die ervaring in om de communicatie tussen gemeentes en burgers te verbeteren met behulp van AI.</p>
             </div>
         </section>
 
@@ -309,12 +314,12 @@
         <section class="section-two-col">
             <div class="two-col-container" style="align-items: start;">
                 <div class="two-col-text">
-                    <h2>Het begin</h2>
-                    <p>In november 2025 deden Kenzo en Ignace mee aan een hackathon mede-georganiseerd door de Gemeente Rijswijk. De opdracht: met AI inzichtelijk maken wat er op social media speelt binnen de gemeente. Ze wonnen de hackathon en zijn vanuit die samenwerking met Gemeente Rijswijk een product gaan ontwikkelen voor gemeentes in heel Nederland. Al snel groeide de ambitie: niet alleen luisteren naar burgers, maar het communicatieve gat tussen gemeente en inwoner verkleinen, in beide richtingen. Samen met Robert vormen we nu het team achter Sentiom en ontwikkelen we onze app op basis van directe feedback van gemeentes.</p>
+                    <h2 data-i18n="about.beginning_h2">Het begin</h2>
+                    <p data-i18n="about.beginning_p">In november 2025 deden Kenzo en Ignace mee aan een hackathon mede-georganiseerd door de Gemeente Rijswijk. De opdracht: met AI inzichtelijk maken wat er op social media speelt binnen de gemeente. Ze wonnen de hackathon en zijn vanuit die samenwerking met Gemeente Rijswijk een product gaan ontwikkelen voor gemeentes in heel Nederland. Al snel groeide de ambitie: niet alleen luisteren naar burgers, maar het communicatieve gat tussen gemeente en inwoner verkleinen, in beide richtingen. Samen met Robert vormen we nu het team achter Sentiom en ontwikkelen we onze app op basis van directe feedback van gemeentes.</p>
                 </div>
                 <div class="two-col-text">
-                    <h2>Onze missie</h2>
-                    <p>Wij geloven dat AI gemeentes kan helpen om dichter bij hun inwoners te staan. Door werkdruk te verminderen en inzicht te vergroten, willen we de band tussen gemeente en burger structureel versterken.</p>
+                    <h2 data-i18n="about.mission_h2">Onze missie</h2>
+                    <p data-i18n="about.mission_p">Wij geloven dat AI gemeentes kan helpen om dichter bij hun inwoners te staan. Door werkdruk te verminderen en inzicht te vergroten, willen we de band tussen gemeente en burger structureel versterken.</p>
                 </div>
             </div>
         </section>
