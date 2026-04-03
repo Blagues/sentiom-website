@@ -111,6 +111,10 @@ body {
     color: hsl(var(--primary));
 }
 
+.nav-menu-only {
+    display: none;
+}
+
 .nav-actions {
     display: flex;
     align-items: center;
@@ -996,6 +1000,24 @@ footer {
 
     .nav-menu a:last-child {
         border-bottom: none;
+    }
+
+    .nav-login,
+    .nav-cta {
+        display: none;
+    }
+
+    .nav-menu-only {
+        display: block;
+    }
+
+    .nav-menu-cta {
+        color: hsl(var(--primary));
+        font-weight: 700;
+    }
+
+    .lang-btn {
+        font-size: 18px;
     }
 
     .nav-container {
