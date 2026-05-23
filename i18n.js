@@ -35,9 +35,9 @@
             about: {
                 team_h2: 'Ons Team',
                 who_h2: 'Wie wij zijn',
-                who_p: 'Wij zijn drie TU Delft-studenten met een gedeelde passie voor AI en de publieke sector. Als leden van Epoch, het AI-studententeam van de TU Delft, hebben we ML-competities gewonnen en projecten met de overheid uitgevoerd. Nu zetten we die ervaring in om de communicatie tussen gemeentes en burgers te verbeteren met behulp van AI.',
+                who_p: 'Wij zijn TU Delft-studenten met een gedeelde passie voor AI en de publieke sector. Als leden van Epoch, het AI-studententeam van de TU Delft, hebben we ML-competities gewonnen en projecten met de overheid uitgevoerd. Nu zetten we die ervaring in om de communicatie tussen gemeentes en burgers te verbeteren met behulp van AI.',
                 beginning_h2: 'Het begin',
-                beginning_p: 'In november 2025 deden Kenzo en Ignace mee aan een hackathon mede-georganiseerd door de Gemeente Rijswijk. De opdracht: met AI inzichtelijk maken wat er op social media speelt binnen de gemeente. Ze wonnen de hackathon en zijn vanuit die samenwerking met Gemeente Rijswijk een product gaan ontwikkelen voor gemeentes in heel Nederland. Al snel groeide de ambitie: niet alleen luisteren naar burgers, maar het communicatieve gat tussen gemeente en inwoner verkleinen, in beide richtingen. Samen met Robert vormen we nu het team achter Sentiom en ontwikkelen we onze app op basis van directe feedback van gemeentes.',
+                beginning_p: 'In november 2025 deden Kenzo en Ignace mee aan een hackathon mede-georganiseerd door de Gemeente Rijswijk. De opdracht: met AI inzichtelijk maken wat er op social media speelt binnen de gemeente. Ze wonnen de hackathon en zijn vanuit die samenwerking met Gemeente Rijswijk een product gaan ontwikkelen voor gemeentes in heel Nederland. Al snel groeide de ambitie: niet alleen luisteren naar burgers, maar het communicatieve gat tussen gemeente en inwoner verkleinen, in beide richtingen. We ontwikkelen onze app op basis van directe feedback van gemeentes.',
                 mission_h2: 'Onze missie',
                 mission_p: 'Wij geloven dat AI gemeentes kan helpen om dichter bij hun inwoners te staan. Door werkdruk te verminderen en inzicht te vergroten, willen we de band tussen gemeente en burger structureel versterken.',
             },
@@ -97,9 +97,9 @@
             about: {
                 team_h2: 'Our Team',
                 who_h2: 'Who We Are',
-                who_p: 'We are three TU Delft students with a shared passion for AI and the public sector. As members of Epoch, TU Delft\'s AI student team, we have won ML competitions and executed projects with the government. Now we\'re applying that experience to improve communication between municipalities and citizens using AI.',
+                who_p: 'We are TU Delft students with a shared passion for AI and the public sector. As members of Epoch, TU Delft\'s AI student team, we have won ML competitions and executed projects with the government. Now we\'re applying that experience to improve communication between municipalities and citizens using AI.',
                 beginning_h2: 'The Beginning',
-                beginning_p: 'In November 2025, Kenzo and Ignace took part in a hackathon co-organized by the Municipality of Rijswijk. The challenge: use AI to make sense of what\'s happening on social media within the municipality. They won the hackathon, and from that collaboration with Rijswijk, began building a product for municipalities across the Netherlands. The ambition grew quickly: not just listening to citizens, but closing the communication gap between municipality and resident — in both directions. Together with Robert, we now form the team behind Sentiom and develop our app based on direct feedback from municipalities.',
+                beginning_p: 'In November 2025, Kenzo and Ignace took part in a hackathon co-organized by the Municipality of Rijswijk. The challenge: use AI to make sense of what\'s happening on social media within the municipality. They won the hackathon, and from that collaboration with Rijswijk, began building a product for municipalities across the Netherlands. The ambition grew quickly: not just listening to citizens, but closing the communication gap between municipality and resident — in both directions. We develop our app based on direct feedback from municipalities.',
                 mission_h2: 'Our Mission',
                 mission_p: 'We believe AI can help municipalities get closer to their residents. By reducing workload and increasing insight, we want to structurally strengthen the bond between municipality and citizen.',
             },
