@@ -379,7 +379,11 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: hsl(var(--muted-foreground));
-    margin-top: 24px;
+    margin: 0 0 16px 0;
+}
+
+.partners-section .partners-label {
+    margin: 24px 0 0 0;
 }
 
 .partners-logos {
@@ -390,10 +394,17 @@ body {
 }
 
 .partners-logos img {
-    height: 180px;
     width: auto;
     opacity: 1;
     object-fit: contain;
+}
+
+.partners-logos .logo-rijswijk {
+    height: 88px;
+}
+
+.partners-logos .logo-delft {
+    height: 60px;
 }
 
 /* TWO COLUMN SECTIONS */
@@ -1079,10 +1090,16 @@ footer {
     }
 
     .partners-logos img {
-        height: 120px;
-        max-height: 120px;
-        min-width: 150px;
+        width: auto;
         flex-shrink: 0;
+    }
+
+    .partners-logos .logo-rijswijk {
+        height: 66px;
+    }
+
+    .partners-logos .logo-delft {
+        height: 45px;
     }
 
     /* Nieuws badges op mobiel */
@@ -1193,9 +1210,15 @@ footer {
     }
 
     .partners-logos img {
-        height: 100px;
-        max-height: 100px;
-        min-width: 140px;
+        width: auto;
+    }
+
+    .partners-logos .logo-rijswijk {
+        height: 55px;
+    }
+
+    .partners-logos .logo-delft {
+        height: 38px;
     }
 
     .feature-card-image {
