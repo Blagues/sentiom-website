@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Sentiom</title>
+    <meta name="description" content="Inzichten van het Sentiom team over AI, gemeenten en privacy.">
+    <link rel="icon" type="image/svg+xml" href="../own logo files/SVG/Logmark blue.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../i18n.js"></script>
+    <style>
+        body {
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+
+
+        .blog-index-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 32px 120px;
+        }
+
+        .blog-index-wrap h1 {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: hsl(var(--primary));
+            margin-bottom: 48px;
+        }
+
+        .blog-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .blog-list-item {
+            border-top: 1px solid hsl(var(--border));
+            padding: 28px 0;
+        }
+
+        .blog-list-item:last-child {
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .blog-list-item a {
+            text-decoration: none;
+        }
+
+        .blog-list-meta {
+            font-size: 13px;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        .blog-list-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: hsl(var(--foreground));
+            margin-bottom: 8px;
+            transition: color 0.2s;
+        }
+
+        .blog-list-item a:hover .blog-list-title {
+            color: hsl(var(--primary));
+        }
+
+        .blog-list-excerpt {
+            font-size: 15px;
+            line-height: 1.6;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 12px;
+        }
+
+        .blog-list-read {
+            font-size: 14px;
+            font-weight: 500;
+            color: hsl(var(--primary));
+            opacity: 0.75;
+            transition: opacity 0.2s;
+        }
+
+        .blog-list-item a:hover .blog-list-read {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../own logo files/SVG/Logo Blue.svg" alt="Sentiom Logo">
+            </a>
+            <div class="nav-menu">
+                <a href="../index.html" data-i18n="nav.home">Home</a>
+                <a href="../product.html" data-i18n="nav.product">Product</a>
+                <a href="../over-ons.html" data-i18n="nav.about">Over Ons</a>
+                <a href="index.html" class="nav-active" data-i18n="nav.blog">Blog</a>
+                <a href="https://app.sentiom.nl" class="nav-menu-only" data-i18n="nav.login">Inloggen</a>
+                <a href="mailto:contact@sentiom.nl" class="nav-menu-only nav-menu-cta" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://app.sentiom.nl" class="nav-login" data-i18n="nav.login">Inloggen</a>
+                <a href="mailto:contact@sentiom.nl" class="nav-cta" data-i18n="nav.contact">Contact</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="nl" onclick="setLang('nl')" aria-label="Nederlands">&#127475;&#127473;</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLang('en')" aria-label="English">&#127468;&#127463;</button>
+                </div>
+                <button class="nav-hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <script src="../nav.js"></script>
+
+    <div class="blog-index-wrap">
+        <h1>Blog</h1>
+
+        <ul class="blog-list">
+            <li class="blog-list-item">
+                <a href="privacy-first.html">
+                    <p class="blog-list-meta">7 juni 2026 &nbsp;·&nbsp; Sentiom</p>
+                    <p class="blog-list-title">Privacy-first: hoe wij omgaan met de AVG</p>
+                    <p class="blog-list-excerpt">Sentiom is vanaf het begin gebouwd met oog op de AVG. Lees hoe wij omgaan met persoonsgegevens, anonimisering en dataveiligheid.</p>
+                    <span class="blog-list-read">Lees meer →</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -214,6 +214,7 @@
                 <a href="index.html" data-i18n="nav.home">Home</a>
                 <a href="product.html" class="nav-active" data-i18n="nav.product">Product</a>
                 <a href="over-ons.html" data-i18n="nav.about">Over Ons</a>
+                <a href="blog/index.html" data-i18n="nav.blog">Blog</a>
                 <a href="https://app.sentiom.nl" class="nav-menu-only" data-i18n="nav.login">Inloggen</a>
                 <a href="mailto:contact@sentiom.nl" class="nav-menu-only nav-menu-cta" data-i18n="nav.contact">Contact</a>
             </div>
@@ -238,14 +239,13 @@
                 <div class="two-col-text">
                     <h2 data-i18n="product.daily_h2">Dagelijkse Updates</h2>
                     <p data-i18n="product.daily_p">Elke ochtend ontvangt u een met AI samengevat rapport per e-mail met de belangrijkste ontwikkelingen op social media in de afgelopen 24 uur. U kunt dit rapport aanpassen naar uw wensen en direct delen met de rest van uw organisatie via een vrij deelbare link.</p>
-                    <button class="btn-preview" onclick="openLightbox()" data-i18n="product.daily_btn">Bekijk deze update &rarr;</button>
                 </div>
                 <div class="two-col-image">
                     <picture>
-                        <source srcset="images/mockup-dagelijkse-update-800w.webp 800w, images/mockup-dagelijkse-update-1200w.webp 1200w" type="image/webp">
+                        <source srcset="images/mockup-dagelijkse-update-800w-avg.webp 800w, images/mockup-dagelijkse-update-1200w-avg.webp 1200w" type="image/webp">
                         <img class="mockup-img"
-                            src="images/mockup-dagelijkse-update-1200w.jpg"
-                            srcset="images/mockup-dagelijkse-update-800w.jpg 800w, images/mockup-dagelijkse-update-1200w.jpg 1200w"
+                            src="images/mockup-dagelijkse-update-1200w-avg.jpg"
+                            srcset="images/mockup-dagelijkse-update-800w-avg.jpg 800w, images/mockup-dagelijkse-update-1200w-avg.jpg 1200w"
                             sizes="(max-width: 768px) 100vw, 50vw"
                             alt="Dagelijkse Updates mockup"
                             loading="lazy">
@@ -255,15 +255,15 @@
         </section>
 
         <!-- Feature 2: Automatisch Rapporten Genereren -->
-        <section class="section-two-col-reverse product-section-reverse">
-            <div class="two-col-container">
+        <section class="section-two-col-reverse product-section-reverse rapport-section" style="padding-bottom: 160px;">
+            <div class="two-col-container rapport-container">
                 <div class="two-col-image">
                     <picture>
-                        <source srcset="images/mockup-rapport-800w.webp 800w, images/mockup-rapport-1200w.webp 1200w" type="image/webp">
-                        <img class="mockup-img"
-                            src="images/mockup-rapport-1200w.jpg"
-                            srcset="images/mockup-rapport-800w.jpg 800w, images/mockup-rapport-1200w.jpg 1200w"
-                            sizes="(max-width: 768px) 100vw, 50vw"
+                        <source srcset="images/mockup-rapport-800w-avg.webp 800w, images/mockup-rapport-1200w-avg.webp 1200w" type="image/webp">
+                        <img class="mockup-img rapport-img"
+                            src="images/mockup-rapport-1200w-avg.jpg"
+                            srcset="images/mockup-rapport-800w-avg.jpg 800w, images/mockup-rapport-1200w-avg.jpg 1200w"
+                            sizes="(max-width: 768px) 100vw, 60vw"
                             alt="Rapport mockup"
                             loading="lazy">
                     </picture>
@@ -271,31 +271,11 @@
                 <div class="two-col-text">
                     <h2 data-i18n="product.reports_h2">Automatisch Rapporten Genereren</h2>
                     <p data-i18n="product.reports_p">Wilt u een onderwerp verder uitdiepen? Met één klik genereert u een volledig rapport, direct inzetbaar binnen de gemeente. Geen handmatig zoekwerk meer.</p>
-                    <button class="btn-preview" onclick="openCarousel()" data-i18n="product.reports_btn">Bekijk een voorbeeldrapport &rarr;</button>
+                    <a class="btn-preview" href="https://avg.sentiom.nl/reports/public/bU1jX5d9P_g95HxGEJyfxQv4BaVopcRE" target="_blank" rel="noopener" data-i18n="product.reports_btn">Bekijk een voorbeeldrapport &rarr;</a>
                 </div>
             </div>
         </section>
 
-        <!-- Feature 3: Social Media Inbox -->
-        <section class="section-two-col product-section" style="padding-bottom: 160px;">
-            <div class="two-col-container">
-                <div class="two-col-text">
-                    <h2 data-i18n="product.inbox_h2">Social Media Inbox</h2>
-                    <p data-i18n="product.inbox_p">Terugkoppeling naar inwoners is essentieel om de band tussen gemeente en burger te versterken. In de Social Media Inbox ziet u welke vragen, opmerkingen en suggesties er recent in uw gemeente zijn geplaatst, zodat u direct vanuit de gemeente kunt reageren op wat er leeft.</p>
-                </div>
-                <div class="two-col-image">
-                    <picture>
-                        <source srcset="images/mockup-social-media-800w.webp 800w, images/mockup-social-media-1200w.webp 1200w" type="image/webp">
-                        <img class="mockup-img"
-                            src="images/mockup-social-media-1200w.jpg"
-                            srcset="images/mockup-social-media-800w.jpg 800w, images/mockup-social-media-1200w.jpg 1200w"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            alt="Social Media Inbox mockup"
-                            loading="lazy">
-                    </picture>
-                </div>
-            </div>
-        </section>
     <div id="shared-sections"></div>
     <script src="page-sections.js"></script>
     </main>
@@ -306,7 +286,10 @@
     <script src="nav.js"></script>
     <!-- Lightbox (dagelijkse update) -->
     <div id="lightbox" onclick="closeLightbox()">
-        <img src="images/dagelijkse-update-preview.webp" alt="Dagelijkse update voorbeeld">
+        <div onclick="event.stopPropagation()" style="position:relative;width:90vw;max-width:900px;height:85vh;background:#fff;border-radius:12px;overflow:hidden;">
+            <button onclick="closeLightbox()" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.5rem;cursor:pointer;z-index:10;color:#333;">&times;</button>
+            <iframe src="https://avg.sentiom.nl/reports/public/bU1jX5d9P_g95HxGEJyfxQv4BaVopcRE" style="width:100%;height:100%;border:none;" title="Dagelijkse update voorbeeld"></iframe>
+        </div>
     </div>
 
     <!-- Carousel lightbox (rapporten) -->

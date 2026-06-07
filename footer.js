@@ -19,6 +19,7 @@ function renderFooter() {
             <p><a href="index.html">${t('nav.home')}</a></p>
             <p><a href="product.html">${t('nav.product')}</a></p>
             <p><a href="over-ons.html">${t('footer.about')}</a></p>
+            <p><a href="blog/index.html">${t('nav.blog')}</a></p>
         </div>
     </div>
     <div class="footer-bottom">

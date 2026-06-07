@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy-first: hoe wij omgaan met de AVG — Sentiom Blog</title>
+    <meta name="description" content="Sentiom is vanaf het begin gebouwd met oog op de AVG. Lees hoe wij omgaan met persoonsgegevens, anonimisering en dataveiligheid.">
+    <link rel="icon" type="image/svg+xml" href="../own logo files/SVG/Logmark blue.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../i18n.js"></script>
+    <style>
+        body {
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+
+        .blog-post-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 32px 120px;
+        }
+
+        .blog-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: hsl(var(--muted-foreground));
+            text-decoration: none;
+            margin-bottom: 48px;
+            transition: color 0.2s;
+        }
+
+        .blog-back:hover {
+            color: hsl(var(--primary));
+        }
+
+        .blog-meta {
+            font-size: 13px;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+        }
+
+        .blog-post-wrap h1 {
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: hsl(var(--primary));
+            margin-bottom: 32px;
+        }
+
+        .blog-divider {
+            border: none;
+            border-top: 1px solid hsl(var(--border));
+            margin-bottom: 40px;
+        }
+
+        .blog-body h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: hsl(var(--foreground));
+            margin: 40px 0 12px;
+        }
+
+        .blog-body p {
+            font-size: 17px;
+            line-height: 1.75;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 20px;
+        }
+
+        .blog-body ul {
+            margin: 0 0 20px 20px;
+        }
+
+        .blog-body ul li {
+            font-size: 17px;
+            line-height: 1.75;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../own logo files/SVG/Logo Blue.svg" alt="Sentiom Logo">
+            </a>
+            <div class="nav-menu">
+                <a href="../index.html" data-i18n="nav.home">Home</a>
+                <a href="../product.html" data-i18n="nav.product">Product</a>
+                <a href="../over-ons.html" data-i18n="nav.about">Over Ons</a>
+                <a href="index.html" class="nav-active" data-i18n="nav.blog">Blog</a>
+                <a href="https://app.sentiom.nl" class="nav-menu-only" data-i18n="nav.login">Inloggen</a>
+                <a href="mailto:contact@sentiom.nl" class="nav-menu-only nav-menu-cta" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://app.sentiom.nl" class="nav-login" data-i18n="nav.login">Inloggen</a>
+                <a href="mailto:contact@sentiom.nl" class="nav-cta" data-i18n="nav.contact">Contact</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="nl" onclick="setLang('nl')" aria-label="Nederlands">&#127475;&#127473;</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLang('en')" aria-label="English">&#127468;&#127463;</button>
+                </div>
+                <button class="nav-hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <script src="../nav.js"></script>
+
+    <div class="blog-post-wrap">
+        <a href="index.html" class="blog-back">← Blog</a>
+
+        <p class="blog-meta">7 juni 2026 &nbsp;·&nbsp; Sentiom</p>
+        <h1>Privacy-first: hoe wij omgaan met de AVG</h1>
+        <hr class="blog-divider">
+
+        <div class="blog-body">
+            <p>Als gemeenten met Sentiom werken, verwerken ze gevoelige informatie over wat er leeft in de samenleving. Dat vraagt om een zorgvuldige omgang met data. Wij hebben dat niet als een vinkje achteraf behandeld, maar als een ontwerpkeuze die we vanaf het begin hebben gemaakt.</p>
+
+            <h2>Geen opslag van persoonsgegevens</h2>
+            <p>Sentiom verzamelt publieke berichten van social media en nieuws. Wij aggregeren de inhoud van deze berichten om inzicht te geven in welke onderwerpen er spelen. We slaan geen persoonsgegevens op: geen namen, profielfoto's, of gebruikersdata worden bewaard in onze systemen.</p>
+
+            <h2>Analyses op geanonimiseerde data</h2>
+            <p>Alle analyses die Sentiom uitvoert, worden gedaan op geanonimiseerde data. Dit betekent dat de AI-modellen die dagelijkse updates en rapporten genereren, niet werken met informatie die herleidbaar is tot individuele personen. Het gaat altijd om geaggregeerde patronen en thema's, niet om individuen.</p>
+
+            <h2>Publieke data als grondslag</h2>
+            <p>Sentiom werkt uitsluitend met publiek beschikbare informatie: openbare social media berichten en nieuws. We verzamelen geen data achter inlogmuren, sturen geen scraper-bots naar besloten communities en verwerken geen privéberichten of e-mails van burgers.</p>
+
+            <h2>Wat dit betekent voor uw gemeente</h2>
+            <p>Als gemeente hoeft u zich geen zorgen te maken over een verwerkersovereenkomst voor persoonsgegevens van burgers in de context van onze analyses. Wij zijn geen verwerker van de persoonsgegevens van uw inwoners.</p>
+            <p>Uiteraard sluiten wij wel een verwerkersovereenkomst af voor de accountgegevens van uw medewerkers die Sentiom gebruiken.</p>
+
+            <h2>Vragen?</h2>
+            <p>Heeft u vragen over hoe Sentiom omgaat met data en privacy? Neem gerust contact op via <a href="mailto:contact@sentiom.nl" style="color: hsl(var(--primary));">contact@sentiom.nl</a>.</p>
+        </div>
+    </div>
+</body>
+</html>
